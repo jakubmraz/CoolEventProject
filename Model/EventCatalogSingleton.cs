@@ -33,6 +33,11 @@ namespace CoolEventProject.Model
         }
 
         private ObservableCollection<Event> _eventCollection = new ObservableCollection<Event>();
+        public ObservableCollection<Event> EventCollection
+        {
+            get { return _eventCollection; }
+        }
+
 
         public void AddEvent(int id, string name, string description, string place, DateTime dateTime)
         {
