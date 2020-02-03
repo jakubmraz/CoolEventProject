@@ -16,6 +16,8 @@ namespace CoolEventProject.ViewModel
         }
 
         public EventCatalogSingleton EventCatalogSingleton { get; }
+        
+        
     }
 
 }
