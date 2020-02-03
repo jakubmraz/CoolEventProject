@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:CoolEventProject.ViewModel"
+    xmlns:model="using:CoolEventProject.Model"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -15,7 +16,34 @@
     
     <Grid>
         <StackPanel>
-          <ListView ItemsSource="{Binding EventCatalog.EventCollection}"/>
+            <ListView ItemsSource="{Binding EventCatalog.EventCollection}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Event">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="ID = "/>
+                                <TextBlock Text="{x:Bind Id}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="{x:Bind Name}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="{x:Bind Description}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="{x:Bind Place}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="{x:Bind DateTime}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </StackPanel>
 
