@@ -9,7 +9,7 @@ namespace CoolEventProject.Model
 {
     class EventCatalogSingleton
     {
-        private EventCatalogSingleton _instance;
+        private static EventCatalogSingleton _instance;
 
         private EventCatalogSingleton()
         {
@@ -17,7 +17,7 @@ namespace CoolEventProject.Model
             AddEvent(02, "Test Event #2", "Because one test was not enough.", "Virtual", DateTime.Today);
         }
 
-        public EventCatalogSingleton Instance
+        public static EventCatalogSingleton Instance
         {
             get
             {

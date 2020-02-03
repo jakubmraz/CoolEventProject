@@ -12,10 +12,10 @@ namespace CoolEventProject.ViewModel
     {
         public EventViewModel()
         {
-            EventCatalogSingleton = EventCatalogSingleton.Instance;
+            EventCatalog = EventCatalogSingleton.Instance;
         }
 
-        public EventCatalogSingleton EventCatalogSingleton { get; }
+        public EventCatalogSingleton EventCatalog { get; }
         
         
     }
