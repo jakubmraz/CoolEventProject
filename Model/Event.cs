@@ -25,10 +25,10 @@ namespace CoolEventProject.Model
         public string Place { get; set; }
         public DateTime DateTime { get; set; }
 
-        public override string ToString()
+       /* public override string ToString()
         {
             return $"Event Name: {Name}; Event ID: {Id}; Description: {Description}; Place: {Place}; Scheduled Date: {DateTime}";
-        }
+        }*/
 
     }
 }
