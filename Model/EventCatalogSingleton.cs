@@ -32,11 +32,11 @@ namespace CoolEventProject.Model
             }
         }
 
-        public ObservableCollection<Event> EventCollection = new ObservableCollection<Event>();
+        private ObservableCollection<Event> _eventCollection = new ObservableCollection<Event>();
 
         public void AddEvent(int id, string name, string description, string place, DateTime dateTime)
         {
-            EventCollection.Add(new Event(id, name, description, place, dateTime));
+            _eventCollection.Add(new Event(id, name, description, place, dateTime));
         }
     }
 }
