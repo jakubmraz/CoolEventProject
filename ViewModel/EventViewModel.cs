@@ -13,6 +13,27 @@ namespace CoolEventProject.ViewModel
 {
     class EventViewModel: INotifyPropertyChanged
     {
+
+        readonly DateTime dt = System.DateTime.Now;
+        public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
+            TimeSpan time)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Place = place;
+            Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+        }
+
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public string Name { get; set; }
+        public string Place { get; set; }
+        public DateTimeOffset Date { get; set; }
+
+        public TimeSpan Time { get; set; }
         public EventViewModel()
         {
             EventCatalog = EventCatalogSingleton.Instance;
