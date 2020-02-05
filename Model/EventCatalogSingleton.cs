@@ -9,12 +9,15 @@ namespace CoolEventProject.Model
 {
     class EventCatalogSingleton
     {
+
         private static EventCatalogSingleton _instance;
+       
 
         private EventCatalogSingleton()
-        {
-            AddEvent(01, "Test Event", "This event is purely hypothetical.", "Virtual", DateTime.Today);
-            AddEvent(02, "Test Event #2", "Because one test was not enough.", "Virtual", DateTime.Today);
+        { 
+            EventsCollection = new ObservableCollection<Event>();
+            EventsCollection.Add(new Event(01, "Test Event", "This event is purely hypothetical.", "Virtual", DateTime.Today));
+            EventsCollection.Add(new Event(02, "Test Event #2", "Because one test was not enough.", "Virtual", DateTime.Today));
         }
 
         public static EventCatalogSingleton Instance
@@ -39,9 +42,9 @@ namespace CoolEventProject.Model
         }
 
 
-        public void AddEvent(int id, string name, string description, string place, DateTime dateTime)
+        public void AddEvent(Event e)
         {
-            EventsCollection.Add(new Event(id, name, description, place, dateTime));
+            EventsCollection.Add(e);
         }
     }
 }

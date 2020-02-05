@@ -27,19 +27,19 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                             <TextBlock Text="ID "/>
-                            <TextBlock Text="{Binding Id, Mode=TwoWay}"/>
+                            <TextBox Text="{Binding Id, Mode=TwoWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Name "/>
-                            <TextBlock Text="{Binding Name, Mode=TwoWay}"/>
+                            <TextBox Text="{Binding Name, Mode=TwoWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Description "/>
-                            <TextBlock Text="{Binding Description, Mode=TwoWay}"/>
+                            <TextBox Text="{Binding Description, Mode=TwoWay}"/>
                         </StackPanel>
                         <StackPanel  Orientation="Horizontal">
                             <TextBlock Text="Place "/>
-                            <TextBlock Text="{Binding Place, Mode=TwoWay}"/>
+                            <TextBox Text="{Binding Place, Mode=TwoWay}"/>
                         </StackPanel>
 
                             <StackPanel Orientation="Horizontal">

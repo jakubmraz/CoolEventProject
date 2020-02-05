@@ -15,18 +15,24 @@ namespace CoolEventProject.ViewModel
     {
 
         readonly DateTime dt = System.DateTime.Now;
-        public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
+       /* public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
             TimeSpan time)
         {
             Id = id;
             Name = name;
             Description = description;
             Place = place;
+           
+        }*/
+
+        
+        public EventViewModel()
+        {
+            EventCatalog = EventCatalogSingleton.Instance;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
         }
-
         public int Id { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
@@ -34,11 +40,6 @@ namespace CoolEventProject.ViewModel
         public DateTimeOffset Date { get; set; }
 
         public TimeSpan Time { get; set; }
-        public EventViewModel()
-        {
-            EventCatalog = EventCatalogSingleton.Instance;
-        }
-
         public EventCatalogSingleton EventCatalog { get; }
 
 
