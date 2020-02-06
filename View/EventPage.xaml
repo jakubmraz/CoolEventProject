@@ -44,7 +44,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
+            <Button Content="Create New Event" Click="Button_Click"/>
         </StackPanel>
 
     </Grid>
