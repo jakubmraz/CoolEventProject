@@ -6,7 +6,10 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using CoolEventProject.Annotations;
+using CoolEventProject.Common;
+using CoolEventProject.Handler;
 using CoolEventProject.Model;
 
 namespace CoolEventProject.ViewModel 
@@ -29,10 +32,18 @@ namespace CoolEventProject.ViewModel
         public EventViewModel()
         {
             EventCatalog = EventCatalogSingleton.Instance;
+            EventHandler = new Handler.EventHandler(this);
+
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
+            CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
+            
         }
+
+        public Handler.EventHandler EventHandler { get; set; }
+        public ICommand CreateEventCommand { get; set; }
+
         public int Id { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
