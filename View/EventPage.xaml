@@ -29,15 +29,15 @@
                                 <TextBlock Text="{x:Bind Name}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="Description = "/>
                                 <TextBlock Text="{x:Bind Description}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="Place = "/>
                                 <TextBlock Text="{x:Bind Place}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Name = "/>
+                                <TextBlock Text="Date = "/>
                                 <TextBlock Text="{x:Bind DateTime}"/>
                             </StackPanel>
                         </StackPanel>
