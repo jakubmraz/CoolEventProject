@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoolEventProject.Pesistency;
 
 namespace CoolEventProject.Model
 {
@@ -11,7 +12,6 @@ namespace CoolEventProject.Model
     {
 
         private static EventCatalogSingleton _instance;
-        
 
         private EventCatalogSingleton()
         {
@@ -40,6 +40,7 @@ namespace CoolEventProject.Model
         public void AddEvent(Event e)
         {
             EventCollection.Add(e);
+            PersistencyService.SaveEventsAsJsonAsync(EventCollection);
         }
     }
 }

@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using CoolEventProject.Model;
+using CoolEventProject.Pesistency;
 using CoolEventProject.View;
 
 namespace CoolEventProject
@@ -31,6 +33,7 @@ namespace CoolEventProject
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            PersistencyService.LoadEventsFromJsonAsync();
         }
 
         /// <summary>
