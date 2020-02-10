@@ -17,53 +17,40 @@
     <Grid>
         <StackPanel>
             <Button Content="Go Back" Click="Button_Click"/>
-            <ListView ItemsSource="{Binding EventCatalog.EventCollection}" SelectionChanged="ListView_SelectionChanged" Height="899" >
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="viewModel:EventViewModel">
                         
-                            <StackPanel Height="370" Width="475">
-                                <StackPanel>
-                                    <TextBlock Text="Add Event" Height="103" HorizontalAlignment="Center" FontSize="48" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="ID "/>
-                            <TextBox Text="{Binding Id, Mode=TwoWay}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Name "/>
-                            <TextBox Text="{Binding Name, Mode=TwoWay}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Description "/>
-                            <TextBox Text="{Binding Description, Mode=TwoWay}"/>
-                        </StackPanel>
-                        <StackPanel  Orientation="Horizontal">
-                            <TextBlock Text="Place "/>
-                            <TextBox Text="{Binding Place, Mode=TwoWay}"/>
-                        </StackPanel>
+            <StackPanel Height="370" Width="475">
+                <StackPanel>
+                    <TextBlock Text="Add Event" Height="103" HorizontalAlignment="Left" FontSize="48" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ID "/>
+                    <TextBox Text="{Binding Id, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name "/>
+                    <TextBox Text="{Binding Name, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Description "/>
+                    <TextBox Text="{Binding Description, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Place "/>
+                    <TextBox Text="{Binding Place, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Date "/>
+                    <DatePicker Date="{Binding Date, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Time "/>
+                    <TimePicker  Time="{Binding Time, Mode=TwoWay}" />
+                </StackPanel>
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Date "/>
-                                <DatePicker Date="{Binding Date, Mode=TwoWay}"/>
-                            </StackPanel>
-                       <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Time "/>
-                        <TimePicker  Time="{Binding Time, Mode=TwoWay}" />
-                            </StackPanel>
-
-                                <StackPanel>
-                                    <Button 
-                                        Content="Add" HorizontalAlignment="Center" Margin="0,40,0,0"/>
-                                </StackPanel>
-
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-
-
+                <StackPanel>
+                    <Button Content="Add" Command="{Binding CreateEventCommand}" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-
     </Grid>
 </Page>

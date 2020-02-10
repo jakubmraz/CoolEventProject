@@ -11,40 +11,33 @@ namespace CoolEventProject.Model
     {
 
         private static EventCatalogSingleton _instance;
-       
+        
 
         private EventCatalogSingleton()
-        { 
-            EventsCollection = new ObservableCollection<Event>();
-            EventsCollection.Add(new Event(01, "Test Event", "This event is purely hypothetical.", "Virtual", DateTime.Today));
-            EventsCollection.Add(new Event(02, "Test Event #2", "Because one test was not enough.", "Virtual", DateTime.Today));
+        {
+            EventCollection = new ObservableCollection<Event>();
         }
 
         public static EventCatalogSingleton Instance
         {
             get
             {
-                if (_instance != null)
+                if (_instance == null)
                 {
-                    return _instance;
+                    return _instance = new EventCatalogSingleton();
                 }
                 else
                 {
-                    return new EventCatalogSingleton();
+                    return _instance;
                 }
             }
         }
 
-        public ObservableCollection<Event> EventsCollection = new ObservableCollection<Event>();
-        public ObservableCollection<Event> EventCollection
-        {
-            get { return EventsCollection; }
-        }
-
+        public ObservableCollection<Event> EventCollection { get; set; }
 
         public void AddEvent(Event e)
         {
-            EventsCollection.Add(e);
+            EventCollection.Add(e);
         }
     }
 }

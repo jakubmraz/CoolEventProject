@@ -16,7 +16,7 @@
     
     <Grid>
         <StackPanel>
-            <ListView ItemsSource="{Binding EventCatalog.EventCollection}">
+            <ListView ItemsSource="{Binding EventCatalog.Instance.EventCollection}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Event">
                         <StackPanel>

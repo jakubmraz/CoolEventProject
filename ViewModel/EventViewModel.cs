@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,9 +17,17 @@ namespace CoolEventProject.ViewModel
 {
     class EventViewModel: INotifyPropertyChanged
     {
+        private int _id;
+        private string _description;
+        private string _name;
+        private string _place;
+        private DateTimeOffset _date;
+        private TimeSpan _time;
 
         readonly DateTime dt = System.DateTime.Now;
-       /* public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
+
+        private ObservableCollection<Event> _events = new ObservableCollection<Event>();
+        /* public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
             TimeSpan time)
         {
             Id = id;
@@ -38,20 +47,63 @@ namespace CoolEventProject.ViewModel
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
             CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
-            
         }
 
         public Handler.EventHandler EventHandler { get; set; }
         public ICommand CreateEventCommand { get; set; }
 
-        public int Id { get; set; }
-        public string Description { get; set; }
-        public string Name { get; set; }
-        public string Place { get; set; }
-        public DateTimeOffset Date { get; set; }
+        public int Id
+        {
+            get { return _id;}
+            set
+            {
+                _id = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Description {
+            get { return _description; }
+            set
+            {
+                _description = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Name {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+        public string Place {
+            get { return _place; }
+            set
+            {
+                _place = value;
+                OnPropertyChanged();
+            }
+        }
+        public DateTimeOffset Date {
+            get { return _date; }
+            set
+            {
+                _date = value;
+                OnPropertyChanged();
+            }
+        }
+        public TimeSpan Time {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public TimeSpan Time { get; set; }
-        public EventCatalogSingleton EventCatalog { get; }
+
+        public EventCatalogSingleton EventCatalog { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

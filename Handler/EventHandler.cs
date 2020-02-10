@@ -14,7 +14,7 @@ namespace CoolEventProject.Handler
     class EventHandler 
     {
         public EventViewModel EventViewModel { get; set; }
-        public EventHandler( EventViewModel evm)
+        public EventHandler(EventViewModel evm)
         {
             EventViewModel = evm;
         }
@@ -25,8 +25,5 @@ namespace CoolEventProject.Handler
             Event e = new Event(EventViewModel.Id, EventViewModel.Name, EventViewModel.Description, EventViewModel.Place,date);
             EventCatalogSingleton.Instance.AddEvent(e);
         }
-
-
-        
     }
 }
