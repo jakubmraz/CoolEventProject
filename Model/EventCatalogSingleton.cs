@@ -16,6 +16,8 @@ namespace CoolEventProject.Model
         private EventCatalogSingleton()
         {
             EventCollection = new ObservableCollection<Event>();
+            EventCollection.Add(new Event(01, "Test Event", "This event is purely hypothetical.", "Virtual", DateTime.Today));
+            EventCollection.Add(new Event(02, "Test Event #2", "Because one test was not enough.", "Virtual", DateTime.Today));
         }
 
         public static EventCatalogSingleton Instance
