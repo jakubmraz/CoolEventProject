@@ -16,7 +16,7 @@
     
     <Grid>
         <StackPanel>
-            <ListView ItemsSource="{Binding EventCatalog.Instance.EventCollection}">
+            <ListView ItemsSource="{Binding EventCatalog.Instance.EventCollection}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Event">
                         <StackPanel>
@@ -45,6 +45,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Content="Create New Event" Click="Button_Click"/>
+            <Button Content="Delete Event" Command="{ Binding DeleteEventCommand}"/>
         </StackPanel>
 
     </Grid>

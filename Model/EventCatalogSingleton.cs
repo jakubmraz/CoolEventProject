@@ -42,5 +42,11 @@ namespace CoolEventProject.Model
             EventCollection.Add(e);
             PersistencyService.SaveEventsAsJsonAsync(EventCollection);
         }
+
+        public void RemoveEvent(Event ev)
+        {
+            EventCollection.Remove(ev);
+            PersistencyService.SaveEventsAsJsonAsync(EventCollection);
+        }
     }
 }

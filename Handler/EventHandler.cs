@@ -25,5 +25,10 @@ namespace CoolEventProject.Handler
             Event e = new Event(EventViewModel.Id, EventViewModel.Name, EventViewModel.Description, EventViewModel.Place,date);
             EventCatalogSingleton.Instance.AddEvent(e);
         }
+
+        public void DeleteEvent()
+        {
+            EventCatalogSingleton.Instance.RemoveEvent(EventViewModel.SelectedEvent);
+        }
     }
 }

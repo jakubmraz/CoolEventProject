@@ -27,17 +27,8 @@ namespace CoolEventProject.ViewModel
         readonly DateTime dt = System.DateTime.Now;
 
         private ObservableCollection<Event> _events = new ObservableCollection<Event>();
-        /* public EventViewModel(int id, string name, string description, string place, DateTimeOffset date,
-            TimeSpan time)
-        {
-            Id = id;
-            Name = name;
-            Description = description;
-            Place = place;
-           
-        }*/
+       
 
-        
         public EventViewModel()
         {
             EventCatalog = EventCatalogSingleton.Instance;
@@ -47,10 +38,15 @@ namespace CoolEventProject.ViewModel
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
 
             CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
+            SelectedEvent= new Event();
+            DeleteEventCommand= new RelayCommand(EventHandler.DeleteEvent);
+
         }
 
         public Handler.EventHandler EventHandler { get; set; }
         public ICommand CreateEventCommand { get; set; }
+        public ICommand DeleteEventCommand { get; set; }
+        public Event SelectedEvent { get; set; }
 
         public int Id
         {

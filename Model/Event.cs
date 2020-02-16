@@ -18,6 +18,7 @@ namespace CoolEventProject.Model
             Place = place;
             DateTime = dateTime;
         }
+        public Event() { }
 
         public int Id { get; set; }
         public string Name { get; set; }
